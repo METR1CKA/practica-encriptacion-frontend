@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'error', component: ErrorPageComponent },
+  { path: '', component: HomeComponent }, // Asocia tu nuevo componente a la ruta '/'
+  { path: '**', component: ErrorPageComponent },
 ];
 
 @NgModule({
