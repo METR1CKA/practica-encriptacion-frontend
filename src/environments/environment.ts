@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
-  // backend: 'http://localhost:3333',
-  backend: '/api/v1',
+  production: true,
+  backend: 'http://localhost/backend',
+  socket: 'http://localhost'
 };

@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { AddDialogComponent } from './data/add-dialog/add-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UpdateDialogComponent } from './data/update-dialog/update-dialog.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { UpdateDialogComponent } from './data/update-dialog/update-dialog.compon
     DataComponent,
     UpdateDialogComponent,
     AddDialogComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
