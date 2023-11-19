@@ -16,7 +16,9 @@ export class ChatComponent implements AfterViewInit {
   socket
 
   constructor() {
-    this.socket = io(environment.socket)
+    this.socket = environment.production
+      ? io(environment.socket, { path: '/web-socket' })
+      : io(environment.socket)
     console.log('socket:', this.socket)
     console.log('host:', environment.socket)
     this.socket.on('get:messages', message => {
