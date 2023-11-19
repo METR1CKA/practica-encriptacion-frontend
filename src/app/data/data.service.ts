@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = `${environment.backend}/api/v1/salas`;
+  // private apiUrl = 'http://localhost:3333/api/v1/salas';
+  private apiUrl = 'http://localhost/backend/api/v1/salas';
 
   constructor(private http: HttpClient) { }
 

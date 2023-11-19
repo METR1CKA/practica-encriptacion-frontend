@@ -1,6 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import io from 'socket.io-client';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-chat',
@@ -11,12 +10,15 @@ export class ChatComponent {
   @ViewChild('messageContainer')
   private messageContainer!: ElementRef;
 
+  // private apiUrl = 'http://localhost:3333';
+  private apiUrl = 'http://localhost/backend';
+
   messages: any[] = []
   newMessage = ''
   socket
 
   constructor() {
-    this.socket = io(environment.backend)
+    this.socket = io(this.apiUrl)
     this.socket.on('get:messages', message => this.messages.push(message))
   }
 
