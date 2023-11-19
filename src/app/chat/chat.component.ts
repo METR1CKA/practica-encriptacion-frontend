@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import io from 'socket.io-client';
 import { environment } from 'src/environments/environment';
+import io from 'socket.io-client';
 
 @Component({
   selector: 'app-chat',
@@ -11,14 +11,14 @@ export class ChatComponent implements AfterViewInit {
   @ViewChild('messageContainer')
   private messageContainer!: ElementRef;
 
-  messages: any[] = []
+  messages: string[] = []
   newMessage = ''
   socket
 
   constructor() {
-    this.socket = io(`${environment.backend}/`)
+    this.socket = io(environment.socket)
     console.log('socket:', this.socket)
-    console.log('host:', environment.backend)
+    console.log('host:', environment.socket)
     this.socket.on('get:messages', message => {
       this.messages.push(message)
     })
