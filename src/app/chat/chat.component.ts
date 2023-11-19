@@ -16,7 +16,7 @@ export class ChatComponent {
   socket
 
   constructor() {
-    this.socket = io(environment.socket)
+    this.socket = io(environment.backend)
     this.socket.on('get:messages', message => this.messages.push(message))
   }
 
