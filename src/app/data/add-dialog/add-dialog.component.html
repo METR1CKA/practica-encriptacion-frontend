@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Agregar Sala</h1>
+<div mat-dialog-content [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button (click)="onClick()" cdkFocusInitial>Agregar</button>
+</div>

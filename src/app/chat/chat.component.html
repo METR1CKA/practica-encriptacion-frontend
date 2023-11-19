@@ -1,0 +1,10 @@
+<div id="messages" #messageContainer>
+  <div *ngFor="let message of messages" class="message" [ngClass]="{ 'odd': isOdd(messages.indexOf(message)) }">
+    {{ message }}
+  </div>
+</div>
+
+<form (ngSubmit)="sendMessage()" id="form">
+  <input [(ngModel)]="newMessage" name="newMessage" autocomplete="off" id="input" placeholder="Escribe un mensaje..." />
+  <button mat-raised-button color="primary" type="submit">Enviar</button>
+</form>
